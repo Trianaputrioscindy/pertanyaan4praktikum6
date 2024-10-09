@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Kalkulator Total Pembelian</title>
-  </head>
-  <body>
-    <h2>Kalkulator Total Pembelian</h2>
-
+<head>
+    <title>Total Pembelian Pelanggan</title>
+</head>
+<body>
     <script>
-      let hargaBarang = prompt("Masukkan harga barang (dalam angka): ");
-      let jumlahBarang = prompt("Masukkan jumlah barang yang dibeli: ");
-      
-      hargaBarang = parseFloat(hargaBarang);
-      jumlahBarang = parseInt(jumlahBarang);
-      
-      let totalHarga = hargaBarang * jumlahBarang;
-      
-      let diskon = 0;
-      if (jumlahBarang > 50) {
-        diskon = 0.10 * totalHarga;  // Diskon 10% jika beli lebih dari 50
-      }
-      
-      let totalSetelahDiskon = totalHarga - diskon;
-      
-      document.write("<p>Total harga tanpa diskon: Rp " + totalHarga + "</p>");
-      document.write("<p>Diskon yang diberikan: Rp " + diskon + "</p>");
-      document.write("<p>Total harga setelah diskon: Rp " + totalSetelahDiskon + "</p>");
+        let hargaBarang = 10000; 
+        let jumlahBarang = 55;   
+        const batasDiskon = 50;       
+        const persentaseDiskon = 0.10;
+        let totalHarga = hargaBarang * jumlahBarang;
+        let diskon = 0;
+        if (jumlahBarang > batasDiskon) {
+            diskon = totalHarga * persentaseDiskon;
+        }
+        let hargaSetelahDiskon = totalHarga - diskon;
+        console.log("Harga keseluruhan tanpa diskon: Rp" + totalHarga);
+        console.log("Diskon yang diberikan: Rp" + diskon);
+        console.log("Harga setelah diskon: Rp" + hargaSetelahDiskon);
     </script>
-  </body>
+</body>
 </html>
