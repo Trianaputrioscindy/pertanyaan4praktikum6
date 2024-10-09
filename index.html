@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kalkulator Total Pembelian</title>
+  </head>
+  <body>
+    <h2>Kalkulator Total Pembelian</h2>
+
+    <script>
+      let hargaBarang = prompt("Masukkan harga barang (dalam angka): ");
+      let jumlahBarang = prompt("Masukkan jumlah barang yang dibeli: ");
+      
+      hargaBarang = parseFloat(hargaBarang);
+      jumlahBarang = parseInt(jumlahBarang);
+      
+      let totalHarga = hargaBarang * jumlahBarang;
+      
+      let diskon = 0;
+      if (jumlahBarang > 50) {
+        diskon = 0.10 * totalHarga;  // Diskon 10% jika beli lebih dari 50
+      }
+      
+      let totalSetelahDiskon = totalHarga - diskon;
+      
+      document.write("<p>Total harga tanpa diskon: Rp " + totalHarga + "</p>");
+      document.write("<p>Diskon yang diberikan: Rp " + diskon + "</p>");
+      document.write("<p>Total harga setelah diskon: Rp " + totalSetelahDiskon + "</p>");
+    </script>
+  </body>
+</html>
